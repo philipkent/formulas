@@ -1,0 +1,26 @@
+\chapter{Dirac Delta Function}
+
+The dirac delta function is even
+\begin{equation}
+	\delta(x-x') = \delta(x'-x)
+\end{equation}
+
+Derivative of the dirac delta function:
+\begin{equation}
+	\delta'(x-x') = \frac{d}{dx}\delta(x-x') = - \frac{d}{dx'}\delta(x-x')
+\end{equation}
+
+\begin{equation}
+	\int \delta'(x-x')f(x')dx' = \frac{d}{dx} f(x)
+\end{equation}
+
+$\delta'(x-x')$ is an odd function
+
+\begin{equation}
+	\frac{d^n\delta(x-x')}{dx^n} = \delta(x-x')\frac{d^n}{dx'^n}
+\end{equation}
+
+Definition of the dirac delta function:
+\begin{equation}
+	\delta(x-x') = \frac{1}{2\pi} \int_{-\infty}^{\infty} e^{ik(x-x')}dk
+\end{equation}

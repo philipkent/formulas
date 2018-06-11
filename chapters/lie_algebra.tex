@@ -1,0 +1,128 @@
+\chapter{Lie Algebra}
+
+\eq{
+	X_i=-i\frac{\partial M(\vec{\theta})}{\partial \theta_i}\bigg\rvert_{\vec{\theta}=0} \text{   (Generators)}
+}
+\frss{The generators contain all information about the group. }
+
+\eq{
+	M^{gen}({\theta}_1, {\theta}_2, ...) = e^{i\theta^i X_i}
+}
+\frss{The generators give the group elements}
+\eq{
+	\left[X_i, X_j\right] = i C_{i,j}^k X_k \text{   (Lie Algebra)}
+}
+\frss{Must be true for $M^{gen}$ to be a valid representation of the group \\
+$C_{i,j}^k$ (structure constants) are independent of the group representation \\
+This is for passive transformations, for active transformations $i\rightarrow-i$ }
+
+Notes:
+\begin{enumerate}
+\item The representations of the generators and the group elements belong to different spaces and behave differently
+\item The Lie Algebra is not a group
+\end{enumerate}
+
+\section{SU(2)}
+
+\eq{
+h = \ppmat{a && c \\ b && d} \newline \{a, b, c, d\} \in \mathbb{C}
+}
+\frss{ 8 parameters}
+
+\eq{
+h^{\dagger}h = I \implies h^\dagger = h^{-1}
+}
+\frss{Four equations so now 4 parameters}
+
+\eq{
+h = \ppmat{a && -b^* \\ b && a^* }
+}
+
+\frss{Proof: $h^{-1} = \ppmat{d && -c \\ -b && a} = h^\dagger =  \ppmat{a^* && b^* \\ c^* && d^*}$}
+\frss{(Four equations above are $d=a^*$, $c=-b^*$)}
+
+\eq{
+\text{det}(h) = 1
+}
+
+\eq{
+	\abs{a}^2 + \abs{b}^2 = 1
+}
+\frss{One constraint so now 3 parameters ($\boldsymbol{R^3}$)}
+Only 3 free parameters so SU(2) is a three dimensional group.
+
+\eq{
+	\boxed{\text{SU}(2) = \left\{ \ppmat{a && -b^* \\ b && a^* } : a, b \in \mathbb{C}, \abs{a}^2+\abs{b}^2=1   \right\}}
+}
+Parameterized by $\Im(a), \Re(b), \Im(b)$
+
+\subsection{Generators of SU(2)}
+\eq{
+	X_1=\ppmat{0 && 1 \\ 1 && 0}=\sigma_1\text{, }X_2=\ppmat{0&&-i\\i&&0}=\sigma_2\text{, }X_3=\ppmat{1&&0\\0&&-1}=\sigma_3
+}
+\frss{These are the Pauli Matrices}
+
+\subsection{Lie Algebra of SU(2)}
+\eq{\left[X_i, X_y\right]=i\epsilon_{ijk}X_k}
+\frss{Same algebra as SO(3)}
+
+\subsection{Topology}
+If $a = x + iy$, $b = z + ir$ then
+\eq{
+	\text{det}(h) = x^2+y^2+z^2+r^2 = 1  
+}
+and the topology is $S^3$, the unit 3-sphere in $\boldsymbol{R^4}$
+
+\subsection{Lie Algebra}
+\eq{
+	\left[X_i,X_j\right]=i\epsilon_{ijk}X_k
+}
+
+\subsection{Basis}
+Basis of SU(2) is given by
+\eq{
+	u_1=\ppmat{0 && i \\ i && 0} \text{     } u_2=\ppmat{0 && -1 \\ 1 && 0} \text{     } u_3=\ppmat{i && 0 \\ 0 && -i}
+}
+
+\section{SO(3)}
+\eq{
+	h = \ppmat{a&&d&&g\\b&&e&&h\\c&&f&&i}
+}
+\frss{9 parameters}
+\eq{
+	\text{det}(h) = 1
+}
+\frss{3 parameters}
+\eq{
+	h^T=h^{-1}
+}
+\frss{6 parameters}
+
+
+Representation $M(\theta_1, \theta_2, \theta_3) = M_1(\theta_1)M_2(\theta_2)M_3(\theta_3)$
+
+\scriptsize{
+\eq{
+	M_1=\ppmat{1&&0&&0\\0&&cos(\theta_1)&&-sin(\theta_1)\\0&&sin(\theta_1)&&cos(\theta_1)}
+	\text{ }
+	M_2=\ppmat{cos(\theta_2)&&0&&-sin(\theta_2)\\0&&1&&0\\sin(\theta_2)&&0&&cos(\theta_2)}
+	\text{ }
+	M_3=\ppmat{cos(\theta_3)&&-sin(\theta_3)&&0\\sin(\theta_3)&&cos(\theta_3)&&0\\0&&0&&1}
+}}
+Generators:
+\eq{
+	X_1 = -i\ppmat{0&&0&&0\\0&&0&&-1\\0&&1&&0}\text{ }X_2=-i\ppmat{0&&0&&-1\\0&&0&&0\\1&&0&&0}\text{ }X_3=-i\ppmat{0&&-1&&0\\1&&0&&0\\0&&0&&0}
+}
+\subsection{Lie Algebra}
+Structure constants $C_{ij}^k$ are the Levi-Civita tensor: 
+\eq{
+	[X_i,X_j]=i\epsilon^`{ijk}X_k
+}
+\eq{
+	[X_1,X_2]=iX_3\text{, }[X_2,X_3]=iX_1\text{, }[X_3,X_1]=iX_2
+}
+
+\section{SO(1, 3)}
+
+\eq{h^\dagger g h = g }
+\frss{Generalized orthogonality condition, g is the metric}

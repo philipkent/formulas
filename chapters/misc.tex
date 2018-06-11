@@ -1,0 +1,50 @@
+\section{Eigenvalues and Eigenvectors of Rotation Matrix}
+The rotation matrix 
+\begin{center}
+$
+ \Omega = \begin{pmatrix}
+ 	cos(\theta) && sin(\theta) \\
+ 	-sin(\theta) && cos(\theta)
+ \end{pmatrix}
+$ 
+\end{center}
+has eigenvectors and eigenvalues 
+\begin{center}
+$
+	\ket{\omega_1} = \frac{1}{\sqrt{2}}\ppmat{i\\1}
+$, $\omega_1 = e^{-i\theta} $
+and
+$
+	\ket{\omega_2} = \frac{1}{\sqrt{2}}\ppmat{-i\\1}
+$, $ \omega_2 = e^{i\theta} $
+\end{center}
+
+A vector can be expressed as a linear combination of the eigenvectors
+
+\begin{align*}
+	\ket{\psi} &= c_1 \ket{\omega_1} + c_2 \ket{\omega_2} \\
+	\ket{\psi} &= \braket{\omega_1}{\psi}\ket{\omega_1} + \braket{\omega_2}{\psi}\ket{\omega_1} \\
+	\ket{\psi} &= \left( \ket{\omega_1}\bra{\omega_1} + \ket{\omega_2}\bra{\omega_2} \right)\ket{\psi} \\
+	\ket{\omega_1}\bra{\omega_1} + \ket{\omega_2}\bra{\omega_2} &= I
+\end{align*}
+
+The image of $\ket{\psi}$ is
+
+\begin{align*}
+	\Omega \ket{\psi} &= \left( \Omega \ket{\omega_1}\bra{\omega_1} + \Omega \ket{\omega_2}\bra{\omega_2} \right)\ket{\psi} \\ 
+ 		&= \left( \omega_1 \ket{\omega_1}\bra{\omega_1} + \omega_2 \ket{\omega_2}\bra{\omega_2} \right)\ket{\psi} \\ 
+\end{align*}
+
+So
+
+\begin{align*}
+	\Aboxed{\Omega &= \omega_1 \ket{\omega_1}\bra{\omega_1} + \omega_2 \ket{\omega_2}\bra{\omega_2}} 
+\end{align*}
+
+For the rotation matrix
+
+\begin{align*}
+	\Omega&=\frac{e^{-i\theta}}{2}\ppmat{i\\1}\ppmat{-i&&1}+\frac{e^{i\theta}}{2}\ppmat{-i\\1}\ppmat{i&&1} \\
+	\Aboxed{\Omega&=e^{-i\theta}\haf{1}\ppmat{1&&i\\-i&&1}+e^{i\theta}\haf{1}\ppmat{1&&-i\\i&&1}}
+\end{align*}
+

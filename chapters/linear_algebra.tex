@@ -1,0 +1,378 @@
+\chapter{Linear Algebra}
+
+
+\section{Determinant Properties}
+\begin{theorem}
+	The determinant of a matrix A is non-zero if and only if A is invertible 
+\end{theorem}
+\eq{\det(A^{-1})=\frac{1}{\det(A)}}
+\eq{\det(A)=\prod_{i=1}^n \lambda_i}
+\frss{Determinant is product of eigenvalues}
+\eq{\det(A B) = \det(A)\det(B)}
+
+\section{Orthogonal Matrices}
+\begin{definition}
+	An nxn real matrix A is orthogonal if the columns of A are orthonormal.
+\end{definition}
+\begin{theorem}
+	Every orthogonal matrix is invertible.
+\end{theorem}
+\begin{theorem}
+	The inverse of an orthogonal matrix orthogonal.
+\end{theorem}
+\eq{A^TA=I}
+\eq{A^T=A^{-1}}
+\eq{\det(A) = \pm 1}
+
+\section{Transpose Properties}
+\eq{
+	\left(\bs{A}+\bs{B}\right)^T=\bs{A}^T+\bs{B}^T
+}
+\eq{
+	\left(\boldsymbol{A}\boldsymbol{B}\right)^T=\boldsymbol{B}^T\boldsymbol{A}^T
+}
+\eq{
+	\det\left(\bs{A}^T\right) = \det(\bs{A})
+}
+
+\section{Linear Vector Spaces}
+\begin{definition}{Linear Vector Space.}
+A linear vector space V is a collection of objects $\ket{1}, \ket{2},...,\ket{V},...\ket{W},...,$ called vectors, for which there exists \\
+
+\begin{itemize}
+	\item A definite rule for forming the vector sum, denoted $\ket{V} + \ket{W}$
+	\item A definite rule for multiplication by scalars $a,b,...,$ denoted $a\ket{V}$ with the following features:
+	\begin{enumerate}
+		\item Closure under addition: $\ket{V} + \ket{W} \in V$
+		\item Scalar multiplication is distributive in the vectors: $a(\ket{V} + \ket{W}) = a\ket{V} + a\ket{W}$
+		\item Scalar multiplication is distributive in the scalars: $(a + b)\ket{V} = a\ket{V} + b\ket{V}$
+		\item Scalar multiplication is associative $a(b\ket{V}) = ab\ket{V}$
+		\item Addition is commutative: $\ket{V} + \ket{W} = \ket{W} + \ket{V}$
+		\item Addition is associative: $\ket{V} + (\ket{W} + \ket{Z}) = (\ket{V} + \ket{W}) + \ket{Z}$
+		\item There exists a null vector $\ket{0}$ obeying $\ket{V} + \ket{0} = \ket{V}$
+		\item For every vector there exists an inverse under addition, $\ket{-V}$, such that $\ket{V} + \ket{-V} = \ket{0}$
+	\end{enumerate}
+\end{itemize}
+\end{definition}
+
+\begin{definition}{Field.} 
+The numbers $a,b,...$ are called the field over which the vector space is defined.
+\end{definition}
+
+\begin{theorem}{}
+	The above axioms of vector spaces imply:
+	\begin{enumerate}
+		\item $\ket{0}$ is unique
+		\item $0\ket{V} = \ket{0}$
+		\item $\ket{-V} = -\ket{V}$
+		\item $\ket{-V}$ is the unique additive inverse of $\ket{V}$
+	\end{enumerate}
+\end{theorem}
+
+\subsection{Linear Independence}
+\begin{definition}{Linearly Independent.}
+	A set of vectors $\{\ket{i}\}$ is said to be linearly independent if $\sum_{i=1}^{n}a_i\ket{i} = \ket{0}$ only when all $a_i=0$.
+\end{definition}
+
+\begin{definition}{Dimension.}
+	A vector space has a dimension $n$ if it can accommodate a maximum of $n$ linearly independent vectors.
+\end{definition}
+
+\begin{theorem}
+	Any vector $\ket{V}$ in an $n$-dimensional space can be written as a linear combination of $n$ linearly independent vectors $\ket{1}...\ket{n}$.
+\end{theorem}
+
+\begin{theorem}
+	The vector expansion $\ket{V} = \sum_{i}^nv_i\ket{i}$ is unique.
+\end{theorem}
+
+\subsection{Inner Product Space}
+\begin{definition}{Inner Product Space.}
+	A vector space with an inner product is called an inner product space where the inner product has the following properties:
+	\begin{itemize}
+		\item $\braket{V}{W}=\braket{W}{V}^*$ (skew-symmetric)
+		\item $\braket{V}{V} \geq 0$ and $\braket{V}{V} = 0$ iff $\ket{V}=\ket{0}$ (positive semidefiniteness)
+		\item $\braket{V}{(a\ket{W} + b\ket{z})} = \braket{V}{aW + bZ} = a\braket{V}{W} + b\braket{V}{Z}$ (linearity in ket)
+	\end{itemize}
+\end{definition}
+
+\subsection{Basis of a Vector Space}
+\begin{definition}{Basis.}
+	A set of $n$ linearly independent vectors in an $n$-dimensional space is called a basis.
+\end{definition}
+
+\begin{definition}{Components of a Vector.}
+	The coefficients of expansion $v_i$ of a vector in terms of a linearly independent basis $\{\ket{i}\}$ are called the components of the vector in that basis.
+\end{definition}
+
+\begin{equation}
+	\braket{i}{j} = \delta_{ij} \text{ for an orthonormal basis}
+\end{equation}
+
+\begin{equation}
+	\sum_{i=1}^n \ket{i}\bra{i} = I \text{ for a complete basis}
+\end{equation}
+
+\section{Dual Spaces}
+
+\subsection{Projection Operator}
+$\ket{i}\bra{i}$ is the projection operator that projects onto the vector $\ket{i}$
+\begin{equation}
+	\ket{V} = \sum_{i} \ket{i}\braket{i}{V}
+\end{equation}	
+
+The adjoint of the vector $\ket{V} = \sum_i v_i \ket{i}$ is:
+\begin{equation}
+	\bra{V} = \sum_i \bra{i} v_i^* 
+\end{equation}
+
+The adjoint of the vector $\ket{V} = \sum_i \ket{i}\braket{i}{V}$ is:
+\begin{equation}
+	\bra{V} = \sum_i \braket{V}{i}\bra{i}
+\end{equation}
+
+
+\subsection{Schwarz and Triangle Inequality}
+\begin{equation}
+	|\braket{V}{W}| \leq |V||W| \text{  Schwarz Inequality}
+\end{equation}
+
+\begin{equation}
+	|V + W| \leq |V| + |W| \text{  Triangle Inequality}
+\end{equation}
+
+\section{Matrix Inverse}
+\subsection{2x2 Matrix Inverse}
+ \eq{
+ 	A^{-1} = \ppmat{a && b \\ c && d}^{-1} = \frac{1}{det(A)}\ppmat{d && -b \\ -c && a} = \frac{1}{ad - bc}\ppmat{d && -b \\ -c && a}
+ }
+\subsection{3x3 Matrix Inverse}
+\eq{
+	A^{-1} = \ppmat{a&&d&&g\\b&&e&&h\\c&&f&&i}^{-1} = \frac{1}{\text{det}(A)}\ppmat{
+			\vvmat{e&&h\\f&&i}&&\vvmat{g&&d\\i&&f}&&\vvmat{d&&g\\e&&h}\\[16pt]
+			\vvmat{h&&b\\i&&c}&&\vvmat{a&&g\\c&&i}&&\vvmat{g&&a\\h&&b}\\[16pt]
+			\vvmat{b&&e\\c&&f}&&\vvmat{d&&a\\f&&c}&&\vvmat{a&&d\\b&&e}
+		}
+}
+
+\section{Operators}
+
+\subsection{Commutators}
+\begin{equation}
+	[\Omega, \Lambda\theta] = \Lambda[\Omega, \theta] + [\Omega, \Lambda]\theta
+\end{equation}
+\begin{equation}
+	[\Lambda\Omega, \theta] = \Lambda[\Omega, \theta] + [\Lambda, \theta]\Omega
+\end{equation}
+
+\subsection{Inverses}
+The inverse of a product of operators is the product of the inverses in reverse:
+\begin{equation}
+	(\Omega\Lambda)^{-1} = \Lambda^{-1}\Omega^{-1}
+\end{equation}
+
+
+\subsection{Matrix Elements of an Operator}
+\begin{equation}
+	\braket{i}{j'} = \bra{i}\Omega\ket{j} = \Omega_{ij}
+\end{equation}
+The matrix element $\Omega_{ij}$ is the $i^{th}$ component of the $j^{th}$ basis vector after it has been transformed by $\Omega$.
+
+\subsection{Active and Passive Transformations}
+Under a change of basis by the unitary operator $U$
+\begin{align}
+	\ket{V} &\rightarrow U\ket{V} \text{  (active)}\\
+	\Omega  &\rightarrow U^{\dagger} \Omega U \text{  (passive)}
+\end{align}
+
+\subsection{Trace of an Operator}
+
+\begin{equation}
+	Tr (A) = \sum_i A_{ij}
+\end{equation}
+
+Properties: permutations are cyclic, the trace of an operator is independent of basis
+\begin{align}
+	Tr(AB) &= Tr(BA) \\
+	Tr(ABC) &= Tr(BCA) = Tr(CAB) \\
+	Tr(A) &= Tr(U^\dagger A U)
+\end{align}
+
+\subsection{Hermitian Operators}
+
+\begin{definition}{Hermitian Operator:}
+	An operator $\Omega$ is Hermitian if $\Omega^\dagger = \Omega$
+\end{definition}
+
+\begin{definition}{Anti-Hermitian Operator:}
+	An operator $\Omega$ is anti-Hermitian if $\Omega^\dagger=-\Omega$
+\end{definition}
+
+Hermitian operators are like real numbers, anti-Hermitian operators are like complex numbers.  Any operator can be decomposed into Hermitian and 
+anti-Hermitian parts:
+
+\begin{equation}
+	\Omega = \frac{\Omega+\Omega^\dagger}{2} + \frac{\Omega-\Omega^\dagger}{2}
+\end{equation}
+
+\begin{theorem}
+	The eigenvalues of a Hermitian operator are real valued.
+\end{theorem}
+
+\begin{theorem}
+	To every Hermitian operator $\Omega$, there exists (at least) a basis consisting of its orthonormal eigenvectors.  The operator
+	is diagonal in this eigenbasis and has its eigenvalues as its diagonal entries.
+\end{theorem}
+
+\begin{theorem}
+	The eigenvectors of a hermitian operator belonging to distinct eigenvalues are orthogonal.
+\end{theorem}
+
+\begin{theorem}
+	The eigen vectors of a hermitian operator span the space.
+\end{theorem}
+
+\subsection{Unitary Operators}
+\begin{definition}{Unitary Operator:}
+	An operator $U$ is unitary if \\ $UU^\dagger=I$
+\end{definition}
+\begin{theorem}
+	The columns of a unitary matrix are orthonormal and the rows of a unitary matrix are orthonormal as well.
+\end{theorem}
+\begin{theorem}
+	The eigenvalues of a unitary operator are complex numbers of unit modulus.
+\end{theorem}
+
+\begin{theorem}
+	The eigenvectors of a unitary operator are mutually orthogonal.
+\end{theorem}
+
+\subsection{Diagonalization of Hermitian Matrices}
+If $\Omega$ is a Hermitian matrix, there exists a unitary matrix $U$ (built out of the eigenvectors of $\Omega$) such that 
+\begin{equation}
+	U^\dagger\Omega U
+\end{equation}
+is diagonal.
+
+\begin{theorem}
+	if $\Omega$ and $\Lambda$ are two commuting Hermitian operators, there exists (at least) a basis of common eigenvectors that 
+	diagonalizes them both.  The common eigenbasis is unique if only one of $\Omega$ or $\Lambda$ are degenerate in some subspace.  
+	If both $\Omega$ and $\Lambda$ are	degenerate in some subspace, the common eigenbasis is not unique.
+\end{theorem}
+
+\begin{theorem}
+	One can always find, for a finite n, a set of operators $\{\Omega, \Lambda, \Gamma, ...\}$ that commute with each other and define
+	a unique eigenbasis that is shared by all operators in the set.
+\end{theorem}
+
+\begin{definition}{Complete set of commuting operators:}
+	A set of commuting operators $\{\Omega, \Lambda, \Gamma, ...\}$ that share a unique eigenbasis.
+\end{definition}
+
+
+
+
+\section{Eigenvectors and Eigenvalues}
+
+Each operator has eigen vectors associated with it:
+\begin{equation}
+	\Omega\ket{V} = \omega \ket{V}
+\end{equation}
+\begin{equation}
+	(\Omega - \omega I)\ket{V} = \ket{0}
+\end{equation}
+\begin{equation}
+	\sum_j (\Omega_{ij}-\omega\delta_{ij})v_j = 0
+\end{equation}
+which gives the eigenvectors if the eigenvalue is known.
+
+$(\Omega - \omega I)^{-1}$ does not exist so the eigenvalue problem cannot be directly solved:
+\begin{equation}
+	\ket{V} = (\Omega - \omega I)^{-1}\ket{0} = \ket{0}
+\end{equation}
+
+\subsection{Characteristic Equation and Polynomial}
+Characteristic equation
+\begin{equation}
+	\text{det}(\Omega - \omega I) = 0
+\end{equation}
+gives the eigenvalues.
+\\
+The characteristic equation is a polynomial equation containing the characteristic polynomial:
+\begin{equation}
+	P^n(\omega) = \sum_{m=0}^{n} c_m \omega^m = 0
+\end{equation}
+
+Roots of the characteristic polynomial are the eigenvalues.
+
+\subsection{Theorems}
+\begin{theorem}
+	The eigenvalues of an operator $\Omega$ are covariant, they have the same value in any basis.
+\end{theorem}
+
+\begin{theorem}
+	A Hermitian or Unitary operator in $V^n(C)$ has n eigenvalues.
+\end{theorem}
+
+\section{Functions of Operators}
+
+\begin{definition}{c-number (or classical number):}
+	Refers real or complex numbers which are commuting.
+\end{definition}
+
+\begin{definition}{q-number(or quantum number):}
+	Refers to operators which in general do not commute.
+\end{definition}
+If only one q-number is present in an equation, everything commutes and it can be treated as a c-number. 
+\\
+If $\Omega$ is an operator:
+\begin{equation}
+	e^\Omega = \sum_{n=1}^{\infty} \frac{\Omega^n}{n!}
+\end{equation}	
+
+
+If $\Omega$ is Hermitian, then in its eigenbasis:
+\begin{equation}
+	e^\Omega = \begin{bmatrix}
+		\sum_{m=0}^{\infty} \frac{\omega_1^m}{m!} && && \\
+		&& \ddots && \\
+		&& && \sum_{m=0}^{\infty} \frac{\omega_n^m}{m!}
+	\end{bmatrix}
+\end{equation}
+
+
+If $\theta(\lambda)$ is the operator:
+\begin{equation}
+	\theta(\lambda) = e^{\lambda \Omega}
+\end{equation}
+
+\begin{equation}
+	\frac{d\theta (\lambda)}{d\lambda} = \Omega e^{\lambda \Omega} = \theta(\lambda)\Omega
+\end{equation}
+\begin{equation}
+	\theta (\lambda) = c exp\left( \int_0^{\lambda} \Omega d\lambda' \right) = c exp(\Omega \lambda)
+\end{equation}
+
+\section{Infinite Dimensional Vector Spaces}
+
+\begin{equation}
+	\braket{f}{g} = \int_a^b f^*(x)g(x)dx \text{ inner product}
+\end{equation}
+
+\begin{equation}
+	\braket{x}{x'} = \delta(x-x') \text{ normalization condition of basis vectors}
+\end{equation}
+
+\section{Derivative Operator}
+\begin{equation}
+	D\ket{f} = \ket{df/dx}
+\end{equation}
+\begin{equation}
+	\bra{x}D\ket{x'} = D_{xx'} = \delta'(x-x') = \delta(x-x')\frac{d}{dx'}
+\end{equation}
+
+The derivative operator is not hermitian.  $K=-iD$ is Hermitian in the space of functions obeying:
+
+\begin{equation}
+	-ig^*(x)f(x)\bigg\rvert_a^b = 0
+\end{equation}

@@ -1,0 +1,58 @@
+\title{Formulas}
+\author{ 
+        Philip D. Kent
+}
+\documentclass[12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{physics}
+\usepackage{amsmath,mathtools,amssymb}
+\usepackage[]{hyperref}
+\hypersetup{
+    pdftitle={Formulas},
+    pdfauthor={Philip D. Kent},
+    pdfsubject={Physics},
+    pdfkeywords={physics, mathematics},
+    bookmarksnumbered=true,     
+    bookmarksopen=true,         
+    bookmarksopenlevel=1,       
+    colorlinks=true,            
+    pdfstartview=Fit,           
+    pdfpagemode=UseOutlines,    
+    pdfpagelayout=TwoPageRight
+}
+\usepackage{amsthm}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\setlength\parindent{0pt}
+
+% commands
+\newcommand{\ppmat}[1]{\begin{pmatrix}#1\end{pmatrix}} 
+\newcommand{\vvmat}[1]{\begin{vmatrix}#1\end{vmatrix}} 
+\newcommand{\haf}[1]{\frac{#1}{2}}
+\newcommand{\eq}[1]{\begin{equation}#1\end{equation}}
+\newcommand{\fr}[1]{\begin{flushright}#1\end{flushright}}
+\newcommand{\frss}[1]{\begin{flushright}\scriptsize{#1}\end{flushright}}
+\newcommand{\bs}[1]{\boldsymbol{#1}}
+\begin{document}
+\maketitle
+
+\part{Mathematics}
+\include{chapters/vector_calculus}
+\include{chapters/linear_algebra}
+\include{chapters/lie_algebra}
+\include{chapters/dirac_delta_function}
+\include{chapters/fourier_analysis}
+
+\part{Physics}
+\include{chapters/electrodynamics}
+\include{chapters/quantum_mechanics}
+
+\part{Misc}
+\include{chapters/misc}
+
+\end{document}

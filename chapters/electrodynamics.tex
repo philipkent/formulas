@@ -1,0 +1,86 @@
+\chapter{Electrodynamics}
+
+\section{Poisson Equation}
+
+\begin{equation}
+	\nabla^2 \Phi = -\rho/\epsilon_0
+\end{equation}
+Integral form ($R=|\vec x - \vec x'|$):
+\begin{equation}
+	\Phi(\vec x) = \frac{1}{4 \pi \epsilon_0} \int_v \frac{\rho(\vec{x}') }{R} d^3x' + 
+	\frac{1}{4\pi}\oint_s \left[ \frac{1}{R} \frac{\partial \Phi}{\partial n'} - \Phi \frac{\partial}{\partial n'}\left( \frac{1}{R} \right) \right] da'
+\end{equation}
+
+\subsection{Solutions to the Poisson Equation}
+Dirichlet boundary conditions:
+\begin{equation}
+	\begin{split}
+		G_D(\vec x, \vec{x}') &= 0  \text{  for $\vec{x}'$ on $S$} \\
+		\Phi(\vec{x}) &= \frac{1}{4 \pi} \int_V \rho(\vec{x}')G_D(\vec{x}, \vec{x}')d^3x' - \frac{1}{4 \pi} \oint_S \Phi(\vec{x}')\frac{\partial G_D}{\partial n'}da' 	
+	\end{split}
+\end{equation}
+Neumann boundary conditions:
+\begin{equation}
+	\begin{split}
+		\frac{\partial G_N}{\partial n'}(\vec x, \vec{x}')  &= -\frac{4 \pi}{S}  \text{  for $\vec{x}'$ on $S$} \\
+		\Phi(\vec{x}) &= \langle \Phi \rangle_S 
+		+ \frac{1}{4 \pi \epsilon_0} \int_V \rho(\vec{x}')G_N(\vec{x}, \vec{x}')d^3x' 
+		+ \frac{1}{4 \pi} \oint_S \frac{\partial \Phi}{\partial n'} G_N da' 	
+	\end{split}
+\end{equation}
+
+\subsection{Potential Energy}
+\begin{equation}
+	W = \frac{1}{2} \int \rho(\vec{x}) \Phi(\vec{x}) d^3x	
+\end{equation}
+\begin{equation} \label{eq:edfieldpe}
+	W = \frac{\epsilon_0}{2} \int \left| \vec{E} \right|^2 d^3x
+\end{equation}
+Notes:
+\begin{enumerate}
+	\item \ref{eq:edfieldpe} includes self energies
+\end{enumerate}
+
+
+\section{Special Relativity}
+
+\subsection{Constant Acceleration}
+$\tau$ is proper time, $x$ is coordinate distance, $t$ is coordinate time
+\begin{equation}
+	x(\tau) = \frac{c^2}{a} \left( cosh \frac{a \tau}{c} - 1 \right) 
+\end{equation}
+\begin{equation}
+t(\tau) = \frac{c}{a} sinh \frac{a \tau}{c}
+\end{equation}
+
+\begin{equation}
+	c = 3 \times 10^8 \text{  m/s}
+\end{equation}
+\begin{equation}
+	\beta = \pi \times 10^7 \text{  s/yr}
+\end{equation}
+
+\begin{equation}
+x_{lyr} = \frac{x_m}{c \beta}
+\end{equation}
+\begin{equation}
+\tau_{yr} = \frac{\tau_{sec}}{\beta} 
+\end{equation}
+
+For 1g of acceleration, $a = g$
+
+\begin{equation}
+	x_{lyr}(\tau) = \frac{c^2}{g \beta c} cosh \left(\frac{g \beta \tau_{yr}}{c} - 1\right)
+\end{equation}
+
+\begin{equation}
+	g\beta \approx c
+\end{equation}
+
+\begin{equation}
+	x_{lyr}(\tau) \approx cosh \left( \tau_{yr} - 1\right)
+\end{equation}
+
+\begin{equation}
+	t_{yr}(\tau_{yr}) \approx sinh \left( \tau_{yr} \right)
+\end{equation}
